@@ -1454,6 +1454,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        target.uppercase = !!opts.uppercase;
 	        target.lowercase = !!opts.lowercase;
 
+	        target.suffix = opts.suffix;
 	        target.prefix = (target.creditCard || target.date) ? '' : (opts.prefix || '');
 	        target.noImmediatePrefix = !!opts.noImmediatePrefix;
 	        target.prefixLength = target.prefix.length;

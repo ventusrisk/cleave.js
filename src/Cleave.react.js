@@ -313,6 +313,12 @@ var cleaveReactClass = CreateReactClass({
             } else {
                 pps.result = pps.numeralFormatter.format(value);
             }
+
+            if(pps.suffix) {
+                pps.result =  pps.numeralFormatter.format(value) + pps.suffix;
+            }
+
+
             owner.updateValueState();
 
             return;
@@ -340,7 +346,7 @@ var cleaveReactClass = CreateReactClass({
         // convert case
         value = pps.uppercase ? value.toUpperCase() : value;
         value = pps.lowercase ? value.toLowerCase() : value;
-
+        
         // prefix
         if (pps.prefix && (!pps.noImmediatePrefix || value.length)) {
             value = pps.prefix + value;
@@ -426,7 +432,6 @@ var cleaveReactClass = CreateReactClass({
         var owner = this;
         // eslint-disable-next-line
         var { value, options, onKeyDown, onFocus, onBlur, onChange, onInit, htmlRef, ...propsToTransfer } = owner.props;
-
         return (
             <input
                 type="text"

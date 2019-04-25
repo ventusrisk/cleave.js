@@ -56,4 +56,4 @@ gulp.task('eslint', function () {
 
 gulp.task('test', gulpsync.sync(['unit', 'browser']));
 
-gulp.task('publish', gulpsync.sync(['build', 'test', 'eslint']));
+gulp.task('publish', gulpsync.sync(['build', 'test']));
